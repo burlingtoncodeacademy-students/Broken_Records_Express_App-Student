@@ -3,10 +3,12 @@ const db = require('./assets/db.json');
 const fs = require('fs');
 const fsPath = './assets/db.json';
 
+// Checking connection
 router.get('/check', async(req, res) => {
     res.sent('Got Endpoint hit!');
 });
 
+// Getting All Data from db.json
 router.get('/all-from-database', async(req,res) => {
     try {
         
@@ -24,6 +26,7 @@ router.get('/all-from-database', async(req,res) => {
     }
 });
 
+// Locate one item by its ID
 router.get('/:id', async(req,res) => {
     try {
         const id = req.params.id;
@@ -46,6 +49,7 @@ router.get('/:id', async(req,res) => {
     }
 });
 
+// Creating a new record in db.json
 router.post('/',  async(req, res) => {
     try {
         
@@ -80,6 +84,7 @@ router.post('/',  async(req, res) => {
     }
 });
 
+// Updating a record within db.json
 router.push('/id', async(req,res) => {
     try {
         
